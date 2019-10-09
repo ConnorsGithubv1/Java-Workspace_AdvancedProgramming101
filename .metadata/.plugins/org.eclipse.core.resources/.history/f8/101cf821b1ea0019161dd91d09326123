@@ -1,0 +1,9 @@
+package practice;
+
+public class divisor {
+
+	public divisor(int num) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

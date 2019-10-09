@@ -1,0 +1,14 @@
+package practice;
+
+import javax.swing.JOptionPane;
+
+public class divisorRunner {
+	
+	public static void main(String[] args) {
+		
+		JOptionPane.showMessageDialog(null, "hello java world");
+		int num = Integer.parseInt( JOptionPane.showInputDialog("enter number:"));
+		divisor numdivider = new divisor();
+		
+	}
+}
