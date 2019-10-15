@@ -1,7 +1,5 @@
 package practice;
 
-import javax.swing.JOptionPane;
-
 public class divisor {
 	
 	private int number;
@@ -12,8 +10,12 @@ public class divisor {
 	}
 	
 	public void finddivisors(int number) {
-		number = number + 6;
-		JOptionPane.showMessageDialog(null, number);
+		
+		for(int r = 1; r <= number; r++) {
+			if (number % r == 0) {
+			System.out.println(r);
+			}
+		}
 	}
 	
 

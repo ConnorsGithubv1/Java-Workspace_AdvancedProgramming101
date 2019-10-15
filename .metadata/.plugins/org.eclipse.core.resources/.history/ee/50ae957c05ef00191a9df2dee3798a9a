@@ -1,0 +1,27 @@
+package practice;
+
+public class countPairs {
+	
+	private String word;
+	private int numpairs;
+
+	public countPairs(String word2) {
+		// TODO Auto-generated constructor stub
+		
+		word = word2;
+	}
+
+	public void findpairs() {
+		// TODO Auto-generated method stub
+		
+		for(int i=0; i < word.length(); i++) {
+			
+			if(word.charAt(i) == word.charAt(i + 1)) {
+				numpairs = numpairs + 1;
+			}
+	
+		}
+		System.out.println(numpairs);
+	}
+
+}
