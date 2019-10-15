@@ -1,0 +1,9 @@
+package practice;
+
+public class factorial {
+
+	public factorial() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

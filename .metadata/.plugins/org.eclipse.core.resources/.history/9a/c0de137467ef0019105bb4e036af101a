@@ -1,0 +1,25 @@
+package practice;
+
+public class factorial {
+	
+	private int number;
+	private int answer;
+
+	public factorial(int num) {
+		// TODO Auto-generated constructor stub
+		
+		number = num;
+	}
+
+
+	public void findfactorial() {
+		// TODO Auto-generated method stub
+		
+		for( int i = 1; number >= i; number--) {
+			System.out.println(number);
+			System.out.println(answer);
+		}
+		System.out.print(answer);
+	}
+
+}

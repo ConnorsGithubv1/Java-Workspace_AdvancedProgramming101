@@ -1,0 +1,18 @@
+package practice;
+
+import javax.swing.JOptionPane;
+
+public class factorialRunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		JOptionPane.showMessageDialog(null, "enter a number to get factorial number");
+		int num = Integer.parseInt( JOptionPane.showInputDialog("enter number:"));
+		factorial factor = new factorial(num);
+		
+		factor.findfactorial(num);
+		
+	}
+
+}
