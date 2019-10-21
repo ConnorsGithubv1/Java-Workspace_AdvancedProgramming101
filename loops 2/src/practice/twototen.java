@@ -1,32 +1,29 @@
 package practice;
 
 public class twototen {
-	
-	private String num;
-	private double answer = 0;
-	private int len;
 
-	public twototen(String number) {
+	public twototen() {
 		// TODO Auto-generated constructor stub
-		num = number;
-		len = num.length();
-		System.out.println(num);
-		
+
 	}
 
-	public void converter() {
+	public void converter(int binary) {
 		// TODO Auto-generated method stub
-		for ( int i = 1; i <= len; i++ ) 
-		{
-			System.out.println(i);
-			
-			if( num.charAt(i) + 1 == '1') {
-				System.out.println("yes");
-				answer += Math.pow(2, i);
-			}
-			
+		int temp = binary;
+		int count = 0;
+		while (temp > 0) {
+			temp = temp / 10;
+			count++;
 		}
-		System.out.println(answer);
+		
+		String check = String.valueOf(binary);
+		for ( int i = 1; i <= count; i++ ){
+			System.out.println(i);
+			if(check.charAt(i) == '1') {
+				System.out.print("yes");
+			}
+		}
+
 	}
 
 }

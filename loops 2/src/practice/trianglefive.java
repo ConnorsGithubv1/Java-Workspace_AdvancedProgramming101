@@ -2,21 +2,27 @@ package practice;
 
 public class trianglefive {
 	
-	private int num;
-	private String letter;
 
-	public trianglefive(String let, int number) {
+	public trianglefive() {
 		// TODO Auto-generated constructor stub
-		letter = let;
-		num = number;
+
 	}
 
-	public void convert() {
+	public void convert(char let, int x) {
 		// TODO Auto-generated method stub
 		
-		for(int i = 0; i < num; i ++){
-			System.out.print(letter);
-			System.out.println(letter);
+		for(int i = 0; i < x; i ++){
+			
+			for(int j = 0; j < x-i; j++) {
+				
+		
+				for(int k = 0; k < x - j; k++ ){
+					System.out.print((char)(let + j));
+					
+				}
+				System.out.print(' ');
+			}
+			System.out.println();
 			
 		}
 		

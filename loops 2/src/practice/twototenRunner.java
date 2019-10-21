@@ -6,10 +6,9 @@ public class twototenRunner {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String number = JOptionPane.showInputDialog("enter binary number:");
-		twototen binary = new twototen(number);
+		twototen binary = new twototen();
 		
-		binary.converter();
+		binary.converter(1010);
 	}
 
 }
