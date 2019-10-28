@@ -8,7 +8,9 @@ public class twototenRunner {
 		// TODO Auto-generated method stub
 		twototen binary = new twototen();
 		
-		binary.converter(1010);
+		binary.converter(11111);
+		/*binary.convert("1111");
+		binary.convert("1100");*/
 	}
 
 }
