@@ -1,51 +1,64 @@
 import java.io.FileNotFoundException;
+
 import java.io.*;
 import java.util.Scanner;
+
 public class Communications
-{ //declare variables
+{
+	
 static int messageNum, checkTotal, messageLength;
-static String message, originalMessage;
+static String message, orginMsg;
 public static void main(String[] args) throws FileNotFoundException
 {
+	
 try // try to open the input file named in the command line
 {
-Scanner sc = new Scanner(new File("communications.txt"));
+Scanner sc = new Scanner(new File("/home/compsci/eclipse-workspace/2018BPAReg/src/communications.txt"));
 // get the number of Starfleet messages to verify
 int numMessages = sc.nextInt();
 // process all messages
 for(int i = 0; i<numMessages;i++)
 {
+	
 // get the message number, check total and length
 messageNum = sc.nextInt();
 checkTotal = sc.nextInt();
 messageLength = sc.nextInt();
 // get the message
-originalMessage = sc.nextLine();
+orginMsg = sc.nextLine();
 // process and verify the message
 message = cleanMessage();
 // build and print output
 printConfirmation();
 }
+
 }catch(FileNotFoundException e) //if file not found display error message
+
 {
-System.out.println(" Input file not found");
+
+	System.out.println(" Input file not found");
+
 }
+
 }
+
 public static String cleanMessage()
+
 {
 //remove beginning and ending spaces in message
-originalMessage = originalMessage.trim();
+orginMsg = orginMsg.trim();
 //check to see if message ends in " over". if so remove "over"
 message = "";
-if(originalMessage.substring(originalMessage.length() - 5).equals(" over"))
-message = originalMessage.substring(0,originalMessage.length() - 5);
+if(orginMsg.substring(orginMsg.length() - 5).equals(" over"))
+message = orginMsg.substring(0,orginMsg.length() - 5);
 else
-message = originalMessage;
+message = orginMsg;
 return message;
 }
 // This method verifies that the check total matches the sum of the chars in the message
 //- use cleaned message
 public static boolean verifyCheckTotal()
+
 {
 int sum = 0;
 for(int i = 0;i < message.length(); i++)
@@ -61,7 +74,8 @@ return false;
 }
 //This method verifies the length of the message matches length transmitted
 //- use cleaned message
-public static boolean verifyLength() //return true if length received = input length
+public static boolean checklength() //return true if length received = input length
+
 {
 if(messageLength == message.length())
 return true;
@@ -69,26 +83,32 @@ return false;
 }
 // This method encodes the original message
 public static String encodeMessage()
+
 { //replace in proper sequence using Strings
-originalMessage = originalMessage.replace("f","B");
-originalMessage = originalMessage.replace("F","P");
-originalMessage = originalMessage.replace("e","A");
-originalMessage = originalMessage.replace(" ","e");
-originalMessage = originalMessage.replace("t",">?/");
+orginMsg = orginMsg.replace("f","B");
+orginMsg = orginMsg.replace("F","P");
+orginMsg = orginMsg.replace("e","A");
+orginMsg = orginMsg.replace(" ","e");
+orginMsg = orginMsg.replace("t",">?/");
 // This method cleans extra spaces off the ends and removes the " over"
 //and returns a cleaned messager for processing
 
-return originalMessage;
+return orginMsg;
 }
 // This method prepares and formats the output
 public static void printConfirmation()
+
 {
 System.out.printf("transmission %03d ",messageNum); //must print 3-digits
 String temp = " confirmed"; //default message
-if(!verifyLength()) //lengths NOT equal - use cleaned message
+if(!checklength()) //lengths NOT equal - use cleaned message
+
 {
-temp = " length error";
+
+	temp = " length error";
+
 }
+
 if(!verifyCheckTotal()) //totals NOT equal - use cleaned message
 {
 if(temp.equals(" confirmed"))
@@ -97,7 +117,7 @@ else
 temp = temp + ", check total error"; //adds comma if needed
 }
 // ORIGINAL message ends in " over" ?
-if(!originalMessage.substring(originalMessage.length() - 5).equals(" over"))
+if(!orginMsg.substring(orginMsg.length() - 5).equals(" over"))
 {
 if(temp.equals(" confirmed"))
 temp = " incomplete transmission";
