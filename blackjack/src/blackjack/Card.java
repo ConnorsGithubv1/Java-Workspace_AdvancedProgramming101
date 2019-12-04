@@ -1,18 +1,27 @@
 package blackjack;
 
+import java.util.Random;
+
 public class Card
 {
-   public static final String FACES[] = {"ACE","TWO","THREE","FOUR",
+   public static final String FACES[] = {"ZERO","ACE","TWO","THREE","FOUR",
 			"FIVE","SIX","SEVEN","EIGHT","NINE","TEN","JACK","QUEEN","KING"};
-
+   
+   public static final String SUITS[] = {"CLUBS","SPADES","DIAMONDS","HEARTS"};
+   
    private String suit;
+   private int num;
    private int face;
    
 
    public Card()
    {
 	   //random card face (int)
-	   face = Math.random()
+	   Random randomGenerator = new Random();
+	   int randomFace = randomGenerator.nextInt(13);
+	   face = randomFace;
+	   int randomSuit = randomGenerator.nextInt(4);
+	   num = randomSuit;
 	   
    }
 
@@ -24,7 +33,7 @@ public class Card
 
    public int getValue()
    {
-	   return face+1;
+	   return face;
    }
 
    
@@ -37,11 +46,9 @@ public class Card
      return FACES[face] + " of " + getSuit() + " | value = " + getValue();
    }
 
-
-   private String getSuit()
-   {
+private String getSuit() {
 	// TODO Auto-generated method stub
-	return null;
-   }
-
+	suit = SUITS[num];
+	return suit;
+}
  }
