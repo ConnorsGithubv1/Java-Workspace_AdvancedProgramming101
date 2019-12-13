@@ -1,15 +1,22 @@
 package nameSearch;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class names {
 	
 	private int year;
+	
 
 	public names() {
 		// TODO Auto-generated constructor stub
 	}
 
+	
 	public int ask() {
 		// TODO Auto-generated method stub
 		Scanner S = new Scanner(System.in);
@@ -31,8 +38,28 @@ public class names {
 		}
 		} while(year > 2018 | year < 1880 );
 		
-		return 1880;
+		return year;
 	}
+	
+	
+	public void listcreate(int i) throws Exception {
+		// TODO Auto-generated method stub
+		ArrayList<String> yearlist = new ArrayList<String>();
+		
+		String yob = "/home/compsci/eclipse-Workspace/names/yob" + i + ".txt";
+		
+		File file = new File(yob); 
+		
+		BufferedReader br = new BufferedReader(new FileReader(file)); 
+		  
+		  String st; 
+		  while ((st = br.readLine()) != null) {
+		    yearlist.add(st);
+		  } 
+		  
+		  System.out.println(yearlist.size());
+	}
+	
 	
 	public static int linear(int arr[], int x) 
 	{ 
@@ -44,6 +71,7 @@ public class names {
 	    } 
 	    return -1; 
 	} 
+	
 	
 	int binary(int arr[], int l, int r, int x) 
     { 
@@ -68,6 +96,6 @@ public class names {
         // We reach here when element is not present 
         // in array 
         return -1; 
-    } 
+    }
 
 }
