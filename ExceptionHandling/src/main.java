@@ -5,7 +5,6 @@ public class main {
 		// TODO Auto-generated method stub
 		run r = new run();
 		r.ask();
-		r.check();
 	}
 
 }

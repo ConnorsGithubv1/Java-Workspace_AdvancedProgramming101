@@ -1,6 +1,7 @@
 package blackjack;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 
 public class deck {
@@ -13,12 +14,12 @@ public static final int NUMCARDS = 52;
 
 public static final String SUITS[] = {"CLUBS","SPADES","DIAMONDS","HEARTS"};
 
-public static final String FACES[] = {"ZERO","ACE","TWO","THREE","FOUR",
+public static final String FACES[] = {"ONE","ACE","TWO","THREE","FOUR",
 		"FIVE","SIX","SEVEN","EIGHT","NINE","TEN","JACK","QUEEN","KING"};
 
 private int topCardIndex;
 
-private ArrayList<Card> stackOfCards;
+static ArrayList<Card> stackOfCards;
 
 // constructor
 
@@ -50,9 +51,12 @@ return 0;
 
 }
 
-public void shuffle(){
+public static void shuffle(){
 
 //add code to shuffle deck – Collections has a shuffle
+	Collections.shuffle(stackOfCards);  
+	System.out.println(stackOfCards);
+	System.out.println(stackOfCards.size());
 
 }
 
