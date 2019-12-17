@@ -10,14 +10,24 @@ import java.util.Scanner;
 public class names {
 	
 	private int year;
-	
+	private String name;
+	private static String results;
+	private ArrayList<String> yearlist = new ArrayList<String>();
 
 	public names() {
-		// TODO Auto-generated constructor stub
+		
+	}
+	
+	public void createYearList(ArrayList<String> yearlist) {
+		this.yearlist = yearlist;
+	}
+	
+	public ArrayList<String> getYearList() {
+		return yearlist;
 	}
 
 	
-	public int ask() {
+	public int askyear() {
 		// TODO Auto-generated method stub
 		Scanner S = new Scanner(System.in);
 		
@@ -36,13 +46,13 @@ public class names {
 			System.out.println(year + " is not a year between 1880 and 2018");
 			System.out.println("enter year between 1880 and 2018:");
 		}
-		} while(year > 2018 | year < 1880 );
+		} while(year > 2018 || year < 1880);
 		
 		return year;
 	}
 	
 	
-	public void listcreate(int i) throws Exception {
+	public ArrayList<String> listcreate(int i) throws Exception {
 		// TODO Auto-generated method stub
 		ArrayList<String> yearlist = new ArrayList<String>();
 		
@@ -57,20 +67,60 @@ public class names {
 		    yearlist.add(st);
 		  } 
 		  
-		  System.out.println(yearlist.size());
+		  System.out.println("-----------------------------------------------");
+		  System.out.println(yearlist.size() + " names found in year: " + year);
+		  System.out.println("-----------------------------------------------");
+		  
+		  return yearlist;
 	}
 	
+	public String askname() {
+		// TODO Auto-generated method stub
+		Scanner A = new Scanner(System.in);
+		boolean b = false;
+		do {
+			
+			
+			try {
+				
+			System.out.println("enter a name: ");
+			
+			name = A.next();
+			
+			name = name.toLowerCase();
+			
+			name = name.substring(0, 1).toUpperCase() + name.substring(1);
+			
+			b = true;
+			
+			} catch(Exception e) {
+				
+				
+			}
+			
+			} while(b != true);
+		
+		System.out.println("-----------------------------------------------");
+		System.out.println(name + " found in year: " + year);
+		System.out.println("-----------------------------------------------");
+		
+		return name;
+	}
+
 	
-	public static int linear(int arr[], int x) 
+	
+	/*public static String linear(ArrayList<String> yearlist, String name) 
 	{ 
-	    int n = arr.length; 
+		results = "number of boys nad number of girls";
+	    int n = yearlist.size();
 	    for(int i = 0; i < n; i++) 
 	    { 
-	        if(arr[i] == x) 
+	        if(yearlist[i] == name) 
 	            return i; 
 	    } 
-	    return -1; 
+	    return results; 
 	} 
+	*/
 	
 	
 	int binary(int arr[], int l, int r, int x) 
@@ -97,5 +147,4 @@ public class names {
         // in array 
         return -1; 
     }
-
 }
