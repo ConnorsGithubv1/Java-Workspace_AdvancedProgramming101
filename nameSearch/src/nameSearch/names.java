@@ -56,7 +56,8 @@ public class names {
 		// TODO Auto-generated method stub
 		ArrayList<String> yearlist = new ArrayList<String>();
 		
-		String yob = "/home/compsci/eclipse-Workspace/names/yob" + i + ".txt";
+		//String yob = "/home/compsci/eclipse-Workspace/names/yob" + i + ".txt";
+		String yob = "yob1880.txt";
 		
 		File file = new File(yob); 
 		
@@ -109,18 +110,22 @@ public class names {
 
 	
 	
-	/*public static String linear(ArrayList<String> yearlist, String name) 
+  public static String linear(ArrayList<String> yearlist, String name) 
 	{ 
 		results = "number of boys nad number of girls";
 	    int n = yearlist.size();
+
 	    for(int i = 0; i < n; i++) 
 	    { 
-	        if(yearlist[i] == name) 
-	            return i; 
+	        if(yearlist.get(i) == name) {
+				
+	        }
+	            
 	    } 
+	   
 	    return results; 
 	} 
-	*/
+	
 	
 	
 	int binary(int arr[], int l, int r, int x) 
