@@ -37,7 +37,7 @@ public class UniquesDupes {
 				dupSet.add(list.get(i));
 			}
 		}
-		System.out.println(dupSet);
+		System.out.println("duplicates:" + dupSet);
 		
 	}
 
