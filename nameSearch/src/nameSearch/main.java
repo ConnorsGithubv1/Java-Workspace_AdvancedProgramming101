@@ -9,7 +9,9 @@ public class main {
 			names n = new names();
 			n.createYearList(n.listcreate(n.askyear()));
 			System.out.println(n.getYearList());
-			n.linear(n.getYearList(), n.askname());
+			//System.out.println();
+			n.linearSearch(n.listcreate(1880), n.askname());
+
 		//}
 	}
 
